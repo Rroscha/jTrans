@@ -119,7 +119,7 @@ if __name__ == '__main__':
     now = datetime.now() # current date and time
     TIMESTAMP="%Y%m%d%H%M"
     tim = now.strftime(TIMESTAMP)
-    logger = get_logger(f"jTrans-{args.model_path}-eval-{args.dataset_path}_savename_{args.experiment_path}_{tim}")
+    logger = get_logger(f"jTrans-{os.path.basename(args.model_path)}-eval-{os.path.basename(args.dataset_path)}_savename_{os.path.basename(args.experiment_path)}_{tim}")
     logger.info(f"Loading Pretrained Model from {args.model_path} ...")
     model = BinBertModel.from_pretrained(args.model_path)
 
